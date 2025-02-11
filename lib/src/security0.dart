@@ -1,7 +1,8 @@
-import 'package:esp_provisioning_ble/esp_provisioning_ble.dart';
-import 'package:esp_provisioning_ble/src/protos/generated/sec0.pb.dart';
-import 'package:esp_provisioning_ble/src/protos/generated/session.pb.dart';
 import 'package:flutter/foundation.dart';
+
+import 'protos/generated/sec0.pb.dart';
+import 'protos/generated/session.pb.dart';
+import 'security.dart';
 
 class Security0 implements ProvSecurity {
   final bool verbose;
