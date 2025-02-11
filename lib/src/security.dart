@@ -9,6 +9,11 @@ enum SecurityState {
   finish,
 }
 
+enum Security0State {
+  step0Request,
+  step0Response,
+}
+
 abstract class ProvSecurity {
   Future<Uint8List> encrypt(Uint8List data);
 
