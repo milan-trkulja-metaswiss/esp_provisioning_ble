@@ -62,12 +62,15 @@ class Security0 implements ProvSecurity {
   }
 
   void processStep0Response(SessionData? responseData) {
-    if (responseData == null) {
-      throw Exception('No response from device');
+    try {
+      if (responseData == null) {
+        throw Exception('No response from device');
+      }
+      if (responseData.secVer != SecSchemeVersion.SecScheme0) {
+        throw Exception('Security version mismatch');
+      }
+    } catch (e) {
+      throw Exception('Unsupported security protocol');
     }
-    if (responseData.secVer != SecSchemeVersion.SecScheme0) {
-      throw Exception('Security version mismatch');
-    }
-    throw Exception('Unsupported security protocol');
   }
 }
